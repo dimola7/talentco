@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0px;
+    background-color: #e7f1ff;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* navbar starts */
+  nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 3rem 1.5rem 4rem;
+  }
+
+  nav .logo > img {
+      width: 10rem;
+  }
+
+  nav .links, .buttons {
+    display: flex;
+    gap: 1.3rem;
+}
+
+  nav .links > a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    color: #272D4E;
+  }
+
+  nav .buttons > button {
+      text-transform: uppercase;
+      width: 180px;
+      height: 43px;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      border: 2px solid #3789FF;
+      cursor: pointer;
+      transition: 0.3s;
+  }
+
+  nav .buttons > button:hover {
+    transform: scale(1.07);
+  }
+
+  nav .buttons > button:nth-child(1) {
+    background-color: transparent;
+    color: #3789FF;
+  }
+
+  nav .buttons > button:nth-child(2) {
+    background-color: #3789FF;
+    color: #fff;
+  }
+
+  nav > .nav-btn {
+    display: none;
+  }
+  nav > #nav-check {
+    display: none;
+  }
+
+/* navbar ends */
+
+
+/* media queries */
+@media (max-width:1120px) {
+    nav {
+        padding: 1rem;
+    }
+}
+
+  @media (max-width:1020px) {
+    nav {
+        padding: 1rem 2rem 1rem 2rem;
+    }
+    nav > .nav-btn {
+      display: block;
+      z-index: 99;
+    }
+    nav > .nav-btn > label {
+      display: inline-block;
+    }
+    nav > .nav-btn > label > span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 2px solid #000;
+    }
+    nav > .links{
+      position: absolute;
+      display: block;
+      width: 100%;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 0;
+      left: 0px;
+      /* padding-top: 10rem; */
+    }
+
+    nav > .links a {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+    nav > .buttons{
+        position: absolute;
+        display: block;
+        width: 100%;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 300px;
+        left: 0;
+      }
+      nav .buttons > button:nth-child(1) {
+        background-color: #fff;
+        border: 1px solid #fff;
+        margin-bottom: 8px;
+      }
+      nav .buttons > button:nth-child(2) {
+        border: 1px solid #fff;
+      }
+    nav > .links > a, nav > .buttons > button{
+      display: block;
+      width: 60%;
+      margin-left: 21%;
+    }
+    nav > #nav-check:not(:checked) ~ .links, nav > #nav-check:not(:checked) ~ .buttons {
+      height: 0px;
+    }
+    nav > #nav-check:checked ~ .links {
+      height: 100vh;
+      overflow-y: auto;
+      background-color: #3789FF;
+      padding-top: 8rem;
+      width: 100%;
+    }
+
+    nav > #nav-check:checked ~ .buttons {
+        height: 100vh;
+        overflow-y: auto;
+        background-color: #3789FF;
+        padding-top: 4rem;
+        width: 100%;
+    }
+  }
